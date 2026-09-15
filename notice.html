@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【記事タイトル表示する】 - FAIRY MODELS AGENCY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1C110C',
+                            medium: '#2A1A14',
+                            light: '#3D261C',
+                            gold: '#C89B3C',
+                            lightgold: '#DDCB82'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .release-body p { margin-bottom: 1.5rem; line-height: 1.8; color: #D1D5DB; }
+    </style>
+</head>
+<body class="bg-[#1C110C] text-[#EAE6E1] font-sans antialiased selection:bg-[#C89B3C] selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER -->
+    <header class="w-full bg-[#1C110C]/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4 md:h-28 gap-2 relative">
+                <div class="hidden md:block w-32"></div>
+                
+                <div class="text-center cursor-pointer">
+                    <a href="./Dummy.html" class="font-serif text-2xl md:text-3xl tracking-[0.25em] font-bold text-[#C89B3C] uppercase">
+                        FAIRY MODELS <span class="font-light text-[#DDCB82]">AGENCY</span>
+                    </a>
+                </div>
+
+                <nav class="flex space-x-10 text-xs tracking-[0.2em] font-medium text-gray-400">
+                    <a href="./Dummy.html#about" class="hover:text-[#C89B3C] transition-colors">ABOUT</a>
+                    <a href="./Dummy.html#models" class="hover:text-[#C89B3C] transition-colors">MODELS</a>
+                    <a href="./Dummy.html#news" class="text-[#C89B3C] transition-colors">NEWS</a>
+                    <a href="./Dummy.html#contact" class="hover:text-[#C89B3C] transition-colors">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full flex-grow">
+        
+        <!-- 記事ヘッダー（日付・カテゴリ・タイトル） -->
+        <div class="space-y-6 pb-8 border-b border-white/10">
+            <div class="flex items-center gap-4">
+                <time datetime="2026-06-01" class="font-serif text-sm text-[#DDCB82]/60 tracking-widest">2026.06.01</time>
+                <span class="text-[10px] tracking-widest bg-[#C89B3C]/10 text-[#C89B3C] px-2.5 py-0.5 rounded uppercase font-medium">【カテゴリの選択】</span>
+            </div>
+            
+            <h1 class="text-2xl md:text-3xl font-medium tracking-wide text-white leading-relaxed bg-red-900/20 p-2 rounded border border-red-500/30">
+                【入力事項】ここにニュースやプレスリリースのタイトルを入力する（例：【新規所属】〇〇が新たに所属しました）※このタイトルをトップページの「最新情報 / お知らせ」テキストに反映
+            </h1>
+            
+            <p class="text-xs text-gray-400 font-light tracking-widest uppercase">
+                Shop Kloset Inc. / FAIRY MODELS AGENCY
+            </p>
+        </div>
+
+        <!-- 記事本文エリア -->
+        <div class="py-12 release-body text-sm font-light tracking-wide leading-relaxed">
+            
+            <!-- メイン画像（アイキャッチ） -->
+            <div class="mb-12 aspect-[16/9] w-full bg-brand-medium overflow-hidden border border-white/5 relative">
+                <img src="./test/12.jpg" alt="Dummy Image" class="w-full h-full object-cover object-center opacity-40">
+                <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                    <span class="text-xs tracking-widest text-[#C89B3C] bg-[#1C110C] px-4 py-2 rounded border border-[#C89B3C]/30">【ニュース関連画像エリア】</span>
+                </div>
+            </div>
+
+            <p class="text-amber-200 font-medium">
+                ※この文章はWebサイトのレイアウトを確認するための「下書き用テンプレート」になります。実際のニュースとして公開する場合、以下の内容を必ず守り実際の情報に書き換えてください。
+            </p>
+
+            <p>
+                【本文記述エリア】ここから「最新情報 / お知らせ」の本文が始まります。プレスリリース形式にする場合は、「Shop Kloset Inc.（本社：東京都渋谷区、代表取締役：〇〇 〇〇）は〜」といった文面で、導入・背景・今後の展望などを段落に分けて記述。
+            </p>
+
+            <!-- 中見出し：美しいタイポグラフィ -->
+            <h2 class="text-lg font-serif text-[#C89B3C] tracking-widest uppercase mt-12 mb-6 border-l-2 border-[#C89B3C] pl-4">
+                【見出し項目（例：Model Profile & Stats / 詳細情報）】
+            </h2>
+
+            <!-- プロフィール・詳細情報詳細 -->
+            <div class="bg-brand-medium/50 p-6 rounded border border-white/5 mb-8 font-serif text-sm tracking-widest text-gray-300 space-y-2">
+                <p class="m-0"><span class="font-sans text-xs text-gray-500 inline-block w-24">ITEM 01 :</span> 【数値記述】</p>
+                <p class="m-0"><span class="font-sans text-xs text-gray-500 inline-block w-24">ITEM 02 :</span> 【数値記述】</p>
+                <p class="m-0"><span class="font-sans text-xs text-gray-500 inline-block w-24">ITEM 03 :</span> 【数値記述】</p>
+                <p class="m-0"><span class="font-sans text-xs text-gray-500 inline-block w-24">ITEM 04 :</span> 【数値記述】</p>
+            </div>
+
+            <p>
+                【最後の締めくくり用の文章エリア】記事の最後を締めくくる文章をここに記述します。お問い合わせ先への誘導（CONTACTフォームへのリンク案内など）や、定型文をここに配置してください。
+            </p>
+
+        </div>
+
+        <!-- ページ下部：ナビゲーションボタン（一覧に戻る） -->
+        <div class="pt-8 border-t border-white/10 flex justify-center">
+            <a href="./news.html" class="inline-block border border-[#C89B3C]/40 text-[#C89B3C] hover:bg-[#C89B3C] hover:text-[#1C110C] px-8 py-3 tracking-[0.2em] text-[10px] font-medium transition-all duration-300 rounded uppercase">
+                ← Back to News List（リストに戻る）
+            </a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#110A07] py-12 text-center border-t border-white/5 space-y-4">
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs tracking-[0.15em]">
+            <a href="./company.html" class="text-[#DDCB82]/60 hover:text-[#C89B3C] transition-colors">COMPANY / LEGAL</a>
+            <a href="./privacy.html" class="text-[#DDCB82]/60 hover:text-[#C89B3C] transition-colors">PRIVACY POLICY</a>
+            <a href="./terms.html" class="text-[#DDCB82]/60 hover:text-[#C89B3C] transition-colors">TERMS OF USE</a>
+            <a href="./cookie.html" class="text-[#DDCB82]/60 hover:text-[#C89B3C] transition-colors">COOKIE POLICY</a>
+        </div>
+        <p class="text-[#DDCB82]/20 text-[11px] tracking-widest">&copy; 2026 Shop Kloset Inc. / FAIRY MODELS AGENCY. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- PAGE TOP BUTTON -->
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-40 right-8 z-50 w-11 h-11 bg-[#110A07] border border-[#C89B3C]/60 text-[#DDCB82] rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:border-[#C89B3C] group shadow-[0_0_15px_-3px_rgba(200,155,60,0.3)] hover:shadow-[0_0_25px_-1px_rgba(200,155,60,0.6)]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="w-4 h-4 text-[#DDCB82] transform group-hover:-translate-y-0.5 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 300) { 
+                btn.classList.remove('opacity-0', 'invisible');
+                btn.classList.add('opacity-100', 'visible');
+            } else {
+                btn.classList.remove('opacity-100', 'visible');
+                btn.classList.add('opacity-0', 'invisible');
+            }
+        });
+    </script>
+</body>
+</html>
