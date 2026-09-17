@@ -261,87 +261,88 @@
 
     <!-- SCRIPTS -->
     <script>
-        // --- ハンバーガーメニュー制御 ---
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const iconMenu = document.getElementById('iconMenu');
-        const iconClose = document.getElementById('iconClose');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+    // --- ハンバーガーメニュー制御 ---
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconMenu = document.getElementById('iconMenu');
+    const iconClose = document.getElementById('iconClose');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        function toggleMenu() {
-            mobileMenu.classList.toggle('hidden');
-            iconMenu.classList.toggle('hidden');
-            iconClose.classList.toggle('hidden');
-        }
+    function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        iconMenu.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+    }
 
-        menuBtn.addEventListener('click', toggleMenu);
+    menuBtn.addEventListener('click', toggleMenu);
 
-        // スマホメニューの項目をタップした際に自動でメニューを閉じる
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        // --- モデルデータ生成 ---
-        const modelsData = [
-            { name: "ELENA V", size: "175 / 82 / 58 / 86", img: "./face_images/r_1.avif", link: "./model_detail.html" },
-            { name: "SOPHIA L", size: "178 / 84 / 60 / 89", img: "./face_images/x.avif", link: "./model_detail.html" },
-            { name: "HARRY G", size: "198 / 84 / 60 / 89", img: "./face_images/c.avif", link: "./model_detail.html" },
-            { name: "JOE K", size: "168 / 84 / 60 / 89", img: "./face_images/7.avif", link: "./model_detail.html" },
-            { name: "CHARLOTTE N", size: "181 / 84 / 60 / 89", img: "./face_images/k.avif", link: "./model_detail.html" },
-            { name: "KATHY H", size: "175 / 82 / 58 / 87", img: "./face_images/g.avif", link: "./model_detail.html" },
-            { name: "OLIVER R", size: "187 / 82 / 58 / 87", img: "./face_images/p.avif", link: "./model_detail.html" },
-            { name: "AMBER J", size: "176 / 83 / 59 / 88", img: "./face_images/i.avif", link: "./model_detail.html" },
-        ];
-
-        const modelGrid = document.getElementById('model-grid');
-        
-        modelsData.forEach(model => {
-            const card = document.createElement('div');
-            card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
-            
-            card.innerHTML = `
-                <a href="./model_detail.html" class="block">
-                    <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4">
-                        <img src="${model.img}" alt="${model.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
-                    </div>
-                    <div class="pb-2">
-                        <h4 class="font-serif text-sm tracking-[0.2em] text-[#EAE6E1] font-medium uppercase transition-colors group-hover:text-[#C89B3C]">${model.name}</h4>
-                        <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light">${model.size}</p>
-                    </div>
-                </a>
-            `;
-            modelGrid.appendChild(card);
-        });
-
-        const observerOptions = { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 };
-        const observer = new IntersectionObserver((entries, observer) => {
-            const intersectingEntries = entries.filter(entry => entry.isIntersecting);
-            intersectingEntries.forEach((entry, index) => {
-                const card = entry.target;
-                setTimeout(() => {
-                    card.classList.add('is-visible');
-                    observer.unobserve(card);
-                }, index * 150); 
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(card => { observer.observe(card); });
-
-        // --- Topへ戻るボタン制御 ---
-        window.addEventListener('scroll', () => {
-            const btn = document.getElementById('scrollTopBtn');
-            if (window.scrollY > 300) {
-                btn.classList.remove('opacity-0', 'invisible');
-                btn.classList.add('opacity-100', 'visible');
-            } else {
-                btn.classList.remove('opacity-100', 'visible');
-                btn.classList.add('opacity-0', 'invisible');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                toggleMenu();
             }
         });
-    </script>
+    });
+
+    // --- モデルデータ生成 ---
+    const modelsData = [
+        { name: "ELENA V", size: "175 / 82 / 58 / 86", img: "./face_images/r_1.avif", link: "./face_images/models_data/elena_v/model_detail.html" },
+        { name: "SOPHIA L", size: "178 / 84 / 60 / 89", img: "./face_images/x.avif", link: "./face_images/models_data/sophia_l/model_detail.html" },
+        { name: "HARRY G", size: "198 / 84 / 60 / 89", img: "./face_images/c.avif", link: "./face_images/models_data/harry_g/model_detail.html" },
+        { name: "JOE K", size: "168 / 84 / 60 / 89", img: "./face_images/7.avif", link: "./face_images/models_data/joe_k/model_detail.html" },
+        { name: "CHARLOTTE N", size: "181 / 84 / 60 / 89", img: "./face_images/k.avif", link: "./face_images/models_data/charlotte_n/model_detail.html" },
+        { name: "KATHY H", size: "175 / 82 / 58 / 87", img: "./face_images/g.avif", link: "./face_images/models_data/kathy_h/model_detail.html" },
+        { name: "OLIVER R", size: "187 / 82 / 58 / 87", img: "./face_images/p.avif", link: "./face_images/models_data/oliver_r/model_detail.html" },
+        { name: "AMBER J", size: "176 / 83 / 59 / 88", img: "./face_images/i.avif", link: "./face_images/models_data/amber_j/model_detail.html" },
+    ];
+
+    const modelGrid = document.getElementById('model-grid');
+    
+    // モデルカードを生成
+    modelsData.forEach(model => {
+        const card = document.createElement('div');
+        card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
+        
+        card.innerHTML = `
+            <a href="${model.link}" class="block">
+                <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4">
+                    <img src="${model.img}" alt="${model.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
+                </div>
+                <div class="pb-2">
+                    <h4 class="font-serif text-sm tracking-[0.2em] text-[#EAE6E1] font-medium uppercase transition-colors group-hover:text-[#C89B3C]">${model.name}</h4>
+                    <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light">${model.size}</p>
+                </div>
+            </a>
+        `;
+        modelGrid.appendChild(card);
+    });
+
+    // --- スクロール連動のアニメーション制御 ---
+    const observerOptions = { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+        const intersectingEntries = entries.filter(entry => entry.isIntersecting);
+        intersectingEntries.forEach((entry, index) => {
+            const card = entry.target;
+            setTimeout(() => {
+                card.classList.add('is-visible');
+                observer.unobserve(card);
+            }, index * 150); 
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(card => { observer.observe(card); });
+
+    // --- Topへ戻るボタン制御 ---
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollTopBtn');
+        if (window.scrollY > 300) {
+            btn.classList.remove('opacity-0', 'invisible');
+            btn.classList.add('opacity-100', 'visible');
+        } else {
+            btn.classList.remove('opacity-100', 'visible');
+            btn.classList.add('opacity-0', 'invisible');
+        }
+    });
+</script>
 </body>
 </html>
